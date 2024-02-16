@@ -1,0 +1,21 @@
+.square {
+  border: 1px solid transparent;
+  pointer-events: none;
+  display: block;
+  width : 7vmin;
+  height : 7vmin;
+  background-color : white;
+  border-radius : 0;
+}
+
+.square:nth-child(3n+1) {
+  border-right : 1px solid black;
+}
+
+.square:nth-child(3n+2) {
+  border-right : 1px solid black;
+}
+
+.square:nth-child(-n+6) {
+  border-bottom : 1px solid black;
+}
