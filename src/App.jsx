@@ -16,10 +16,23 @@ function App() {
 
   const [player, setPlayer] = useState(1);
   const [firstPlayer, setFirstPlayer] = useState("X");
-  
+
   useEffect(() => {
+    if (playable.length == 1 && pseudoBoard[playable[0]] != null) {
+      let newPlayable = [];
+      pseudoBoard.forEach((el,i) => el == null ? newPlayable.push(i) : null);
+      setPlayable(newPlayable);
+    } 
     updatePseudoBoard(board,setPseudoBoard);
   } ,[board]);
+
+  useEffect(() => {
+    if (playable.length == 1 && pseudoBoard[playable[0]] != null) {
+      let newPlayable = [];
+      pseudoBoard.forEach((el,i) => el == null ? newPlayable.push(i) : null);
+      setPlayable(newPlayable);
+    }
+  } ,[pseudoBoard]);
 
   return (
     <div className="game">

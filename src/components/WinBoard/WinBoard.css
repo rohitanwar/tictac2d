@@ -12,8 +12,12 @@ svg {
   height : 80%;
   width : 80%;
   margin : auto;
-  max-width : 100%;
-  
+  max-width : 100%; 
+}
+
+.X {
+  height : 100%;
+  width : 100%;
 }
 .winBoard:nth-child(3n+1) {
   border-right : 1px solid black;

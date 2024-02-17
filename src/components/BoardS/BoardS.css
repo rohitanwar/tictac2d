@@ -1,8 +1,17 @@
 .boardS {
+  background-color : transparent;
   padding : 15px 15px 15px 15px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+}
+
+.playable:hover {
+  box-shadow:inset 0px 0px 10px 10px rgba(0,255,0,0.5);
+}
+
+.nonplayable:hover {
+  box-shadow:inset 0px 0px 10px 10px rgba(228,16,0,0.5);
 }
 
 .boardS:nth-child(3n+1) {

@@ -6,7 +6,7 @@ function Board({handleClick, board, playable, firstPlayer, pseudoBoard}) {
     <div className="board">
         {board.map((square,i) =>
           pseudoBoard[i] == null ?
-          <BoardS squares = {square} playable={playable} handleClick = {handleClick(i)} key={i} firstPlayer={firstPlayer}/>
+          <BoardS squares = {square} playable={playable.includes(i)} handleClick = {handleClick(i)} key={i} firstPlayer={firstPlayer}/>
           : <WinBoard player = {pseudoBoard[i] == 1 ? firstPlayer : firstPlayer == "X" ? "O" : "X"} key={i}/>
          )}
     </div>

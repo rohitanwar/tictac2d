@@ -5,7 +5,7 @@ function WinBoard({player}) {
   return (
     <div className="winBoard">
     <div className="icon">
-    {player == "X" ? <XIcon size={128} /> : <CircleIcon/> } </div>
+    {player == "X" ? <XIcon className="X"/> : <CircleIcon/> } </div>
     </div>
   )
 }
