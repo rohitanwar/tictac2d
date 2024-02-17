@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -16,11 +16,14 @@ function App() {
 
   const [player, setPlayer] = useState(1);
   const [firstPlayer, setFirstPlayer] = useState("X");
-
+  
+  useEffect(() => {
+    updatePseudoBoard(board,setPseudoBoard);
+  } ,[board]);
 
   return (
     <div className="game">
-      <Board handleClick={handleClick(board,setBoard,pseudoBoard,setPseudoBoard,player,setPlayer, playable, setPlayable)}
+      <Board handleClick={handleClick(board,setBoard,pseudoBoard,player,setPlayer, playable, setPlayable)}
             pseudoBoard={pseudoBoard}
             board={board}
             playable={playable}
@@ -30,10 +33,9 @@ function App() {
   )
 }
 
-let handleClick = (board,setBoard,pseudoBoard,setPseudoBoard,player,setPlayer,playable, setPlayable) => i => j => {
+let handleClick = (board,setBoard,pseudoBoard,player,setPlayer,playable, setPlayable) => i => j => {
   if (board[i][j] == null && pseudoBoard[i] == null && playable.includes(i)) {
     updateBoard(board,setBoard,player)(i)(j);
-    updatePseudoBoard(board,setPseudoBoard);
     setPlayer(player*-1);
     setPlayable([j]);
 
