@@ -1,10 +1,13 @@
 import BoardS from 'components/BoardS/BoardS.jsx'
+import WinBoard from 'components/WinBoard/WinBoard.jsx'
 import './Board.css'
-function Board({xIsNext, board, playable}) {
+function Board({handleClick, board, playable, firstPlayer, pseudoBoard}) {
   return (
     <div className="board">
         {board.map((square,i) =>
-          <BoardS squares = {square} xIsNext = {xIsNext} playable = {playable == i || playable == -1}/>
+          pseudoBoard[i] == null ?
+          <BoardS squares = {square} playable={playable} handleClick = {handleClick(i)} key={i} firstPlayer={firstPlayer}/>
+          : <WinBoard player = {pseudoBoard[i] == 1 ? firstPlayer : firstPlayer == "X" ? "O" : "X"} key={i}/>
          )}
     </div>
   )

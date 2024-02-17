@@ -1,10 +1,11 @@
 .square {
   border: 1px solid transparent;
-  pointer-events: none;
   display: block;
   width : 7vmin;
   height : 7vmin;
   background-color : white;
+  color : black;
+  font-size : 4vmin;
   border-radius : 0;
 }
 
